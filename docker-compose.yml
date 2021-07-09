@@ -12,4 +12,33 @@ services:
     build:
       context: .
       dockerfile: ContaCorrente-Backend/Dockerfile
+    environment:
+      DbHost: "dbContaCorrente"
+      DbPort: "1433"
+      DbUser: "SA"
+      Password: "ToroDB123"
+      Database: "Toro"
+    ports:
+      - "16001:80"
+      - "16002:443"
+    networks:
+      - NetworkContaCorrente
+    depends_on: 
+      - dbContaCorrente
 
+  dbContaCorrente:
+    container_name: dbContaCorrente
+    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    environment:
+      SA_PASSWORD: "ToroDB123"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    networks:
+      - NetworkContaCorrente
+
+networks: 
+    NetworkContaCorrente:
+      driver: bridge
+    NetworkSPB:
+      driver: bridge
