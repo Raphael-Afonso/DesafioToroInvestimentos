@@ -13,7 +13,7 @@ services:
       context: .
       dockerfile: ContaCorrente-Backend/Dockerfile
     environment:
-      DbHost: "dbContaCorrente"
+      DbHost: "ContaCorrente-Db"
       DbPort: "1433"
       DbUser: "SA"
       Password: "ToroDB123"
@@ -24,10 +24,10 @@ services:
     networks:
       - NetworkContaCorrente
     depends_on: 
-      - dbContaCorrente
+      - ContaCorrente-Db
 
-  dbContaCorrente:
-    container_name: dbContaCorrente
+  ContaCorrente-Db:
+    container_name: ContaCorrente-Db
     image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
     environment:
       SA_PASSWORD: "ToroDB123"
