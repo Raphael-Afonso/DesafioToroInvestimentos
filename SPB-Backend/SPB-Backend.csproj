@@ -5,6 +5,7 @@
     <RootNamespace>SPB_Backend</RootNamespace>
     <UserSecretsId>90084406-fce1-4fc9-a30f-2ad1035c558a</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>

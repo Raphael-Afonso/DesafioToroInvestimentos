@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  spb-backend:
+    image: ${DOCKER_REGISTRY-}spbbackend
+    build:
+      context: .
+      dockerfile: SPB-Backend/Dockerfile
