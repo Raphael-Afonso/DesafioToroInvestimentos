@@ -6,3 +6,10 @@ services:
     build:
       context: .
       dockerfile: SPB-Backend/Dockerfile
+
+  contacorrente-backend:
+    image: ${DOCKER_REGISTRY-}contacorrentebackend
+    build:
+      context: .
+      dockerfile: ContaCorrente-Backend/Dockerfile
+
