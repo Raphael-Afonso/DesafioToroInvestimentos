@@ -32,7 +32,7 @@ namespace SPB_Backend.Models
         }
     }
 
-    public class Root
+    public class SPB
     {
         public string @event { get; private set; }
         public Target target { get; private set; }
@@ -40,7 +40,7 @@ namespace SPB_Backend.Models
         public int amount { get; private set; }
 
         [JsonConstructor]
-        public Root(string @event, Target target, Origin origin, int amount)
+        public SPB(string @event, Target target, Origin origin, int amount)
         {
             this.@event = @event;
             this.target = target;
