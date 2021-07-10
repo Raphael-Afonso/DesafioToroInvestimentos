@@ -2,46 +2,47 @@
 
 namespace SPB_Backend.Models
 {
-    public class Parte
+    public class Target
     {
-        public string Banco { get; private set; }
-        public string Agencia { get; private set; }
-        public string CPF { get; private set; }
+        public string bank { get; private set; }
+        public string branch { get; private set; }
+        public string account { get; private set; }
 
-        [JsonConstructor]
-        public Parte(string banco, string agencia, string cPF)
+        public Target(string bank, string branch, string account)
         {
-            Banco = banco;
-            Agencia = agencia;
-            CPF = cPF;
+            this.bank = bank;
+            this.branch = branch;
+            this.account = account;
         }
     }
-    public class ContraParte
-    {
-        public string Banco { get; private set; }
-        public string Agencia { get; private set; }
-        public string Conta { get; private set; }
 
-        [JsonConstructor]
-        public ContraParte(string banco, string agencia, string conta)
+    public class Origin
+    {
+        public string bank { get; private set; }
+        public string branch { get; private set; }
+        public string cpf { get; private set; }
+
+        public Origin(string bank, string branch, string cpf)
         {
-            Banco = banco;
-            Agencia = agencia;
-            Conta = conta;
+            this.bank = bank;
+            this.branch = branch;
+            this.cpf = cpf;
         }
     }
-    public class SPB
-    {
-        public ContraParte ContraParte { get; private set; }
-        public Parte Parte { get; private set; }
-        public decimal Valor { get; private set; }
 
-        [JsonConstructor]
-        public SPB(ContraParte contraParte, Parte parte, decimal valor)
+    public class Root
+    {
+        public string @event { get; private set; }
+        public Target target { get; private set; }
+        public Origin origin { get; private set; }
+        public int amount { get; private set; }
+
+        public Root(string @event, Target target, Origin origin, int amount)
         {
-            ContraParte = contraParte;
-            Parte = parte;
-            Valor = valor;
+            this.@event = @event;
+            this.target = target;
+            this.origin = origin;
+            this.amount = amount;
         }
     }
 }
