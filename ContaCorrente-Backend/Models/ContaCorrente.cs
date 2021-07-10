@@ -31,5 +31,6 @@ namespace ContaCorrente_Backend.Models
             Inscricao = inscricao;
             Conta = conta;
         }
+        public void Depositar(decimal valorAReceber) => Saldo += valorAReceber;
     }
 }
