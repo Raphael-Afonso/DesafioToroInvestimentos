@@ -15,7 +15,6 @@ namespace ContaCorrente_Backend.Controllers
     public class ContaCorrenteController : ControllerBase
     {
         private readonly ILogger<ContaCorrenteController> _logger;
-        private readonly ContaCorrenteRepository _repository;
         private readonly ContaCorrenteService _service;
 
         public ContaCorrenteController(
@@ -23,7 +22,6 @@ namespace ContaCorrente_Backend.Controllers
             DbContextOptions<SQLContext> options)
         {
             _service = new(options);
-            _repository = new(options);
             _logger = logger;
         }
 
@@ -36,7 +34,7 @@ namespace ContaCorrente_Backend.Controllers
         {
             try
             {
-                return Created(string.Empty, _repository.CriarContaCorrente(new ContaCorrente(titular, inscricao, conta)));
+                return Created(string.Empty, _service.AbrirContaCorrente(titular, inscricao, conta));
             }
             catch (Exception ex)
             {

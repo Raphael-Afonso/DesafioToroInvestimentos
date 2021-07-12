@@ -33,5 +33,10 @@ namespace ContaCorrente_Backend.Services
             else
                 throw new ApplicationException("Evento não reconhecido!");
         }
+        public ContaCorrente AbrirContaCorrente(string titular,
+            string inscricao, string conta) => 
+            _repository.CriarContaCorrente(new ContaCorrente(titular, inscricao, conta));
+
+
     }
 }
