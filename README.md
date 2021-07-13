@@ -56,7 +56,15 @@ Onde um banco de dados em SQL foi montado para persistir estes dados.
 ```
 git clone https://github.com/Raphael-Afonso/DesafioToroInvestimentos
 ```
-2. Execute o docker compose para criar a infraestrutura de containers e iniciar os serviços
+2. Navegue até a pasta "ContaCorrente-Backend" e execute o seguinte comando:
+```
+dotnet build
+```
+3. Na pasta "SPB-Backend" execute o mesmo comando:
+```
+dotnet build
+```
+4. Retorne a raíz e execute o docker compose para criar a infraestrutura de containers e iniciar os serviços
 ```
 docker-compose up
 ```
