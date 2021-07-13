@@ -54,7 +54,7 @@ Onde um banco de dados em SQL foi montado para persistir estes dados.
 ### Para executar a aplicação siga os seguintes passos:
 1. Faça um clone do repositório através do comando 
 ```
-git clone https://github.com/libgit2/libgit2
+git clone https://github.com/Raphael-Afonso/DesafioToroInvestimentos
 ```
 2. Execute o docker compose para criar a infraestrutura de containers e iniciar os serviços
 ```
