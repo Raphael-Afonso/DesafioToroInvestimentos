@@ -6,6 +6,16 @@ services:
     build:
       context: .
       dockerfile: SPB-Backend/Dockerfile
+    environment:
+      ContaCorrenteHost: "contacorrente-backend"
+    ports:
+      - "16003:80"
+      - "16004:443"
+    networks:
+      - NetworkContaCorrente
+    depends_on: 
+      - contacorrente-backend
+    
 
   contacorrente-backend:
     image: ${DOCKER_REGISTRY-}contacorrentebackend
