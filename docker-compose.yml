@@ -12,7 +12,7 @@ services:
       - "16003:80"
       - "16004:443"
     networks:
-      - NetworkContaCorrente
+      - NetworkSPB
     depends_on: 
       - contacorrente-backend
     
@@ -33,6 +33,7 @@ services:
       - "16002:443"
     networks:
       - NetworkContaCorrente
+      - NetworkSPB
     depends_on: 
       - ContaCorrente-Db
 
